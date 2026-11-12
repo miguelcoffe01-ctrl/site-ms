@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="color-scheme:dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Miguel Alves da Silva | Jovem Aprendiz e futuro Pentester</title>
+<meta name="description" content="Candidato a Jovem Aprendiz em tecnologia e administrativo, estudando Linux, redes e cibersegurança com o objetivo de ser Pentester.">
+<meta name="theme-color" content="#070707">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Miguel Alves da Silva | Jovem Aprendiz e futuro Pentester">
+<meta property="og:description" content="Estudando Linux, redes e cibersegurança para ser Pentester. Disponível para Jovem Aprendiz.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{colors:{k:{bg:'#070707',card:'#101010',line:'#2b1a1e',red:'#ef2b3f',deep:'#7a0f1b',soft:'#ff8a94'}},fontFamily:{sans:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}
+</script>
+<style>
+html{scroll-behavior:smooth;background:#070709}
+body{background:transparent;color:#e7e5e4;font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+background-image:radial-gradient(900px 520px at 85% -8%,rgba(239,43,63,.2),transparent 62%),radial-gradient(700px 420px at -5% 35%,rgba(122,15,27,.22),transparent 60%)}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(239,43,63,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(239,43,63,.06) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 80% 60% at 50% 0,#000 20%,transparent 75%)}
+section[id]{scroll-margin-top:5rem}
+.ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.card{position:relative;overflow:hidden;background:linear-gradient(180deg,#121216,#0b0b0d);border:1px solid #2b1a1e;transition:border-color .3s,box-shadow .3s,transform .3s}
+.card::before{content:'';position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,#ef2b3f,#ff8a94);transition:width .5s}.card:hover::before{width:100%}
+.card:hover{border-color:rgba(239,43,63,.65);box-shadow:0 0 28px rgba(239,43,63,.14);transform:translateY(-3px)}
+.chip{background:rgba(239,43,63,.1);color:#ef2b3f;border:1px solid rgba(239,43,63,.35)}
+.btn{position:relative;overflow:hidden;background:linear-gradient(135deg,#ff4757,#c4111f);color:#fff;box-shadow:0 8px 28px rgba(239,43,63,.35);transition:transform .25s,box-shadow .25s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(239,43,63,.5)}
+.btn::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s}.btn:hover::after{left:130%}
+.btn2{border:1px solid #3a1c20;transition:all .25s}.btn2:hover{border-color:#ef2b3f;color:#fff}
+:focus-visible{outline:2px solid #ef2b3f;outline-offset:3px}
+.glow{position:relative}
+.glow::before{content:'';position:absolute;top:55%;left:50%;width:85%;height:85%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(239,43,63,.5),rgba(140,18,32,.22) 50%,transparent 75%);filter:blur(32px);border-radius:50%;animation:pg 4s ease-in-out infinite alternate}
+@keyframes pg{from{opacity:.65;transform:translate(-50%,-50%) scale(.95)}to{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
+.ring{animation:spin 30s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.scan{position:absolute;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,#ef2b3f,transparent);box-shadow:0 0 14px #ef2b3f;z-index:20;animation:scan 4.5s ease-in-out infinite;opacity:.7}
+@keyframes scan{0%,100%{top:8%}50%{top:92%}}
+.step-line{position:absolute;left:19px;top:40px;bottom:-24px;width:2px;background:linear-gradient(#ef2b3f,#4a1620);transform:scaleY(0);transform-origin:top;transition:transform .9s .3s}.rv.on .step-line{transform:scaleY(1)}
+.dot{display:block;width:8px;height:8px;border-radius:50%;background:#ef2b3f;animation:dp 1.6s ease-in-out infinite}@keyframes dp{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}@keyframes rot{to{--a:360deg}}
+.glowborder{position:relative}.glowborder::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--a),rgba(239,43,63,.15) 0 55%,#ff4757 80%,rgba(239,43,63,.15));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:rot 6s linear infinite;pointer-events:none}
+.hud i{position:absolute;width:24px;height:24px;border:2px solid #ff4757;z-index:20;opacity:.85}.hud i:nth-child(1){top:2%;left:4%;border-right:0;border-bottom:0}.hud i:nth-child(2){top:2%;right:4%;border-left:0;border-bottom:0}.hud i:nth-child(3){bottom:2%;left:4%;border-right:0;border-top:0}.hud i:nth-child(4){bottom:2%;right:4%;border-left:0;border-top:0}
+.grid>.rv:nth-child(2){transition-delay:.1s}.grid>.rv:nth-child(3){transition-delay:.2s}.grid>.rv:nth-child(4){transition-delay:.3s}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.on{opacity:1;transform:none}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#070707}::-webkit-scrollbar-thumb{background:#7a0f1b;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#ef2b3f}
+
+/* ===== Animações extras ===== */
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.6}
+@keyframes up{from{opacity:0;transform:translateY(20px);filter:blur(6px)}}
+.hero-in>*{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-in>*:nth-child(1){animation-delay:.05s}.hero-in>*:nth-child(2){animation-delay:.15s}.hero-in>*:nth-child(3){animation-delay:.25s}.hero-in>*:nth-child(4){animation-delay:.35s}.hero-in>*:nth-child(5){animation-delay:.45s}.hero-in>*:nth-child(6){animation-delay:.55s}.hero-in>*:nth-child(7){animation-delay:.65s}.hero-in>*:nth-child(8){animation-delay:.75s}
+.caret{display:inline-block;width:.55ch;height:1.05em;margin-left:2px;vertical-align:-.15em;background:#ef2b3f;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+.glow{animation:bob 6s ease-in-out infinite}@keyframes bob{50%{translate:0 -10px}}
+.rv{filter:blur(4px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}.rv.on{filter:none}
+.card{background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(239,43,63,calc(var(--so,0)*.13)),transparent 45%),linear-gradient(180deg,#121216,#0b0b0d)}
+.chip .ic{transition:transform .35s cubic-bezier(.2,1.4,.4,1)}.card:hover .chip .ic{transform:rotate(-8deg) scale(1.18)}
+.nl{position:relative;transition:color .25s}.nl::after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:100%;background:#ef2b3f;transform:scaleX(0);transform-origin:left;transition:transform .3s}.nl:hover::after,.nl.act::after{transform:scaleX(1)}.nl.act{color:#ef2b3f}
+#hd{transition:background .3s,box-shadow .3s}#hd.sc{background:rgba(7,7,7,.94);box-shadow:0 10px 34px rgba(0,0,0,.55)}
+.logo:hover .ic{animation:wob .6s}@keyframes wob{25%{transform:rotate(-14deg) scale(1.15)}60%{transform:rotate(10deg) scale(1.1)}}
+.ttl{position:relative;padding-bottom:.7rem}.ttl::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:0;background:linear-gradient(90deg,#ef2b3f,transparent);transition:width .9s .25s}.ttl.on::after{width:5rem}
+.pingr::after{content:'';position:absolute;inset:-2px;border-radius:50%;border:2px solid #ef2b3f;animation:pingk 1.9s cubic-bezier(0,0,.2,1) infinite}@keyframes pingk{75%,100%{transform:scale(1.7);opacity:0}}
+.cta{animation:ctag 2.6s ease-out infinite}.cta:hover{animation:none}@keyframes ctag{0%{box-shadow:0 8px 28px rgba(239,43,63,.35),0 0 0 0 rgba(239,43,63,.5)}70%,100%{box-shadow:0 8px 28px rgba(239,43,63,.35),0 0 0 14px rgba(239,43,63,0)}}
+.marq{overflow:hidden;border-block:1px solid #2b1a1e;background:rgba(239,43,63,.04);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marq-t{display:flex;width:max-content;animation:mq 32s linear infinite}.marq:hover .marq-t{animation-play-state:paused}
+.marq-t span{display:flex;align-items:center;gap:.6rem;padding:.9rem 1.6rem;font:600 .8rem 'JetBrains Mono',monospace;letter-spacing:.14em;color:#a8a29e;white-space:nowrap}.marq-t .ic{color:#ef2b3f}
+@keyframes mq{to{transform:translateX(-50%)}}
+.wa{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:max(1rem,env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:.6rem;animation:waIn .7s 1.2s cubic-bezier(.2,1.4,.4,1) both}
+.wa-ic{position:relative;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2ee66f,#128c4a);color:#fff;box-shadow:0 10px 28px rgba(18,140,74,.45);transition:transform .3s cubic-bezier(.2,1.4,.4,1)}
+.wa-ic::before,.wa-ic::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;opacity:0;animation:waRing 2.4s ease-out infinite}.wa-ic::after{animation-delay:1.2s}
+@keyframes waRing{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.8);opacity:0}}
+.wa:hover .wa-ic{transform:scale(1.1) rotate(-8deg)}
+.wa-tip{background:#101010;border:1px solid #2b1a1e;color:#e7e5e4;font-size:.8rem;font-weight:500;padding:.5rem .85rem;border-radius:.7rem;white-space:nowrap;opacity:0;transform:translateX(10px);pointer-events:none;transition:opacity .25s,transform .25s}
+.wa:hover .wa-tip,.wa:focus-visible .wa-tip{opacity:1;transform:none}
+@keyframes waIn{from{opacity:0;transform:scale(.3) translateY(24px)}}
+@media(hover:none){.wa-tip{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}html{scroll-behavior:auto}#net{display:none}}
+</style>
+<noscript><style>.rv{opacity:1!important;transform:none!important;filter:none!important}.hero-in>*{animation:none!important}</style></noscript>
+</head>
+<body class="antialiased">
+<canvas id="net" aria-hidden="true"></canvas>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+<symbol id="i-term" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
+<symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+<symbol id="i-net" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+<symbol id="i-dl" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+<symbol id="i-msg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+<symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88M14.12 3.88 16 2M9 7.13v-1a3 3 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6M12 20v-9M6.53 9C4.6 8.8 3 7.1 3 5M6 13H2M3 21c0-2.1 1.7-3.9 3.8-4M20.97 5c0 2.1-1.6 3.8-3.5 4M22 13h-4M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+</svg>
+
+<header id="hd" class="fixed top-0 left-0 w-full z-50 bg-k-bg/80 backdrop-blur-md border-b border-k-line" style="padding-top:env(safe-area-inset-top,0px)">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<a href="#" class="logo font-mono text-lg font-semibold text-white flex items-center gap-2"><svg class="ic text-k-red"><use href="#i-shield"/></svg>MIGUEL<span class="text-k-red">.SEC</span></a>
+<nav aria-label="Principal" class="hidden md:flex gap-6 text-sm font-medium text-stone-400">
+<a href="#sobre" class="nl hover:text-k-red transition-colors">Sobre mim</a>
+<a href="#habilidades" class="nl hover:text-k-red transition-colors">Habilidades</a>
+<a href="#caminho" class="nl hover:text-k-red transition-colors">Caminho</a>
+<a href="#certificados" class="nl hover:text-k-red transition-colors">Certificados</a>
+<a href="#objetivo" class="nl hover:text-k-red transition-colors">Objetivo</a>
+</nav>
+<a href="#contato" class="chip hover:bg-k-red hover:text-white font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg transition-all">Contato</a>
+</div>
+<div id="bar" class="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-gradient-to-r from-k-deep to-k-red" style="transform:scaleX(0)"></div>
+</header>
+
+<main id="conteudo" class="pt-24 pb-16">
+
+<!-- Hero -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="hero-in md:col-span-7 space-y-6 text-center md:text-left order-2 md:order-1">
+<div class="chip inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono">
+<span class="w-2 h-2 rounded-full bg-k-red animate-pulse"></span>Disponível para Jovem Aprendiz
+</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-stone-400">Miguel Alves <br class="hidden sm:inline">da Silva</h1>
+<p class="text-lg sm:text-xl font-mono text-k-soft">14 anos | Recife - PE</p>
+<p class="font-mono text-sm sm:text-base text-stone-400 min-h-[1.5em]" aria-hidden="true"><span class="text-k-red">$</span> <span id="typed">rumo a Pentester</span><span class="caret"></span></p>
+<p class="text-xl sm:text-2xl text-white font-medium max-w-xl leading-snug">Meu objetivo é ser <span class="text-k-red">Pentester</span>: encontrar falhas em sistemas e redes, sempre com autorização, para ajudar a corrigi-las.</p>
+<p class="text-stone-400 text-base sm:text-lg max-w-xl leading-relaxed">Candidato a <strong class="text-white">Jovem Aprendiz</strong> nos setores <strong class="text-white">administrativo</strong> e de <strong class="text-white">tecnologia</strong>. Dedicado, autodidata e construindo desde já a base para virar pentester.</p>
+
+<div class="flex flex-wrap gap-3 justify-center md:justify-start">
+<span class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[.03] border border-k-line text-sm text-stone-300"><svg class="ic text-k-red"><use href="#i-term"/></svg>Linux</span>
+<span class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[.03] border border-k-line text-sm text-stone-300"><svg class="ic text-k-red"><use href="#i-net"/></svg>Redes</span>
+<span class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[.03] border border-k-line text-sm text-stone-300"><svg class="ic text-k-red"><use href="#i-server"/></svg>VirtualBox</span>
+<span class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[.03] border border-k-line text-sm text-stone-300"><svg class="ic text-k-red"><use href="#i-target"/></svg>TryHackMe</span>
+</div>
+
+<div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+<a href="#contato" class="btn cta font-bold px-6 py-3 rounded-lg flex items-center gap-2"><svg class="ic"><use href="#i-send"/></svg>Entrar em contato</a>
+<a href="curriculo-miguel-alves-da-silva-com-certificados-v3.pdf" download class="btn2 bg-k-card text-stone-300 font-medium px-6 py-3 rounded-lg flex items-center gap-2"><svg class="ic text-k-red"><use href="#i-dl"/></svg>Baixar currículo (PDF)</a>
+</div>
+</div>
+
+<div class="md:col-span-5 flex justify-center order-1 md:order-2">
+<div class="glow w-full max-w-xs sm:max-w-sm relative">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="ring w-full aspect-square rounded-full border border-dashed border-k-red/40"></div>
+</div>
+<div class="scan" aria-hidden="true"></div>
+<div class="hud absolute inset-0 pointer-events-none" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<img src="foto-miguel.webp" alt="Miguel Alves da Silva" width="539" height="463" fetchpriority="high" decoding="async" class="relative z-10 w-full h-auto object-cover drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]">
+</div>
+</div>
+</div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="marq-t"><span><svg class="ic"><use href="#i-bug"/></svg>PENTEST</span><span><svg class="ic"><use href="#i-target"/></svg>RED TEAM</span><span><svg class="ic"><use href="#i-shield"/></svg>CIBERSEGURANÇA</span><span><svg class="ic"><use href="#i-term"/></svg>LINUX</span><span><svg class="ic"><use href="#i-net"/></svg>REDES</span><span><svg class="ic"><use href="#i-server"/></svg>VIRTUALBOX</span><span><svg class="ic"><use href="#i-code"/></svg>PROGRAMAÇÃO</span><span><svg class="ic"><use href="#i-bug"/></svg>PENTEST</span><span><svg class="ic"><use href="#i-target"/></svg>RED TEAM</span><span><svg class="ic"><use href="#i-shield"/></svg>CIBERSEGURANÇA</span><span><svg class="ic"><use href="#i-term"/></svg>LINUX</span><span><svg class="ic"><use href="#i-net"/></svg>REDES</span><span><svg class="ic"><use href="#i-server"/></svg>VIRTUALBOX</span><span><svg class="ic"><use href="#i-code"/></svg>PROGRAMAÇÃO</span></div></div>
+
+<!-- Sobre -->
+<section id="sobre" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="card rounded-2xl p-6 sm:p-10 relative overflow-hidden rv">
+<div class="absolute -top-12 -right-12 w-44 h-44 bg-k-red/15 rounded-full blur-3xl pointer-events-none"></div>
+<h2 class="ttl rv text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3"><svg class="ic text-k-red"><use href="#i-user"/></svg>Sobre mim</h2>
+<div class="text-stone-300 space-y-4 text-base sm:text-lg leading-relaxed max-w-3xl">
+<p>Tenho <strong class="text-white">14 anos</strong>, moro em <strong class="text-white">Recife-PE</strong> e sou apaixonado por tecnologia. Me considero uma pessoa que não aprende as coisas da noite para o dia, mas me esforço muito para buscar conhecimento e evoluir sempre.</p>
+<p>No meu dia a dia, gosto de mexer com computadores, jogar futebol e estudar nos tempos livres, achando essa prática muito interessante.</p>
+<p class="p-4 bg-black/50 rounded-xl border-l-4 border-k-red text-stone-200">Quero ser <strong class="text-k-red">Pentester</strong>, o profissional de <strong class="text-k-red">cibersegurança</strong> que testa sistemas com autorização para achar falhas antes dos criminosos. Depois, quero evoluir para <strong class="text-white">Red Team</strong>. Por isso busco uma vaga de <strong class="text-white">Jovem Aprendiz</strong> em tecnologia ou no administrativo, para aprender na prática, somar com a equipe e crescer profissionalmente.</p>
+</div>
+</div>
+</section>
+
+<!-- Habilidades -->
+<section id="habilidades" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<h2 class="ttl rv text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3"><svg class="ic text-k-red"><use href="#i-cpu"/></svg>Habilidades e conhecimentos</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="card p-6 rounded-xl space-y-3 rv">
+<div class="flex items-center gap-3 text-white font-bold text-lg"><div class="p-2 chip rounded-lg"><svg class="ic"><use href="#i-term"/></svg></div>Sistemas operacionais e Linux</div>
+<p class="text-stone-400 text-sm leading-relaxed">Uso diário de sistemas Linux (<span class="text-white">Mint, Ubuntu, Zorin OS</span>) e familiaridade com o terminal e comandos básicos, fazendo nele quase tudo o que fazia no Windows. Conhecimento básico em Windows.</p>
+<span class="chip inline-block text-xs font-mono px-2 py-1 rounded">Base para pentest</span>
+</div>
+<div class="card p-6 rounded-xl space-y-3 rv">
+<div class="flex items-center gap-3 text-white font-bold text-lg"><div class="p-2 chip rounded-lg"><svg class="ic"><use href="#i-server"/></svg></div>Virtualização</div>
+<p class="text-stone-400 text-sm leading-relaxed">Experiência prática com virtualização de sistemas e computadores utilizando a ferramenta <span class="text-white">VirtualBox</span>.</p>
+<span class="chip inline-block text-xs font-mono px-2 py-1 rounded">Base para laboratórios de teste</span>
+</div>
+<div class="card p-6 rounded-xl space-y-3 rv">
+<div class="flex items-center gap-3 text-white font-bold text-lg"><div class="p-2 chip rounded-lg"><svg class="ic"><use href="#i-cpu"/></svg></div>Hardware e manutenção</div>
+<p class="text-stone-400 text-sm leading-relaxed">Conhecimento prático em <span class="text-white">montagem e manutenção de computadores</span>, diagnóstico básico de peças e componentes.</p>
+</div>
+<div class="card p-6 rounded-xl space-y-3 rv">
+<div class="flex items-center gap-3 text-white font-bold text-lg"><div class="p-2 chip rounded-lg"><svg class="ic"><use href="#i-net"/></svg></div>Estudos atuais</div>
+<p class="text-stone-400 text-sm leading-relaxed">Atualmente fazendo a trilha <span class="text-white">Pre Security</span> no <span class="text-white">TryHackMe</span>, que ensina cibersegurança desde a base, e sempre buscando evolução em conhecimentos gerais de TI e rotinas administrativas.</p>
+<span class="chip inline-block text-xs font-mono px-2 py-1 rounded">Base para segurança ofensiva</span>
+</div>
+</div>
+</section>
+
+<!-- Caminho -->
+<section id="caminho" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<h2 class="ttl rv text-2xl sm:text-3xl font-bold text-white mb-2 flex items-center gap-3"><svg class="ic text-k-red"><use href="#i-target"/></svg>Meu caminho até a cibersegurança</h2>
+<p class="text-stone-400 mb-8 max-w-2xl">Os passos que estou seguindo para chegar a Pentester.</p>
+<ol class="max-w-3xl space-y-6">
+<li class="relative pl-14 rv"><span class="step-line"></span><span class="absolute left-0 top-0 w-10 h-10 rounded-full bg-k-red text-white grid place-items-center"><svg class="ic"><use href="#i-check"/></svg></span>
+<h3 class="text-white font-bold text-lg">1. Linux e terminal <span class="chip ml-2 text-xs font-mono px-2 py-0.5 rounded align-middle">Concluído</span></h3>
+<p class="text-stone-400 text-sm mt-1">Uso diário de Linux e curso Linux Unhatched, da Cisco Networking Academy.</p></li>
+<li class="relative pl-14 rv"><span class="step-line"></span><span class="absolute left-0 top-0 w-10 h-10 rounded-full bg-k-red text-white grid place-items-center"><svg class="ic"><use href="#i-check"/></svg></span>
+<h3 class="text-white font-bold text-lg">2. Virtualização e laboratórios <span class="chip ml-2 text-xs font-mono px-2 py-0.5 rounded align-middle">Concluído</span></h3>
+<p class="text-stone-400 text-sm mt-1">Criação e gerenciamento de máquinas virtuais com VirtualBox, o ambiente seguro para praticar.</p></li>
+<li class="relative pl-14 rv"><span class="step-line"></span><span class="absolute left-0 top-0 w-10 h-10 rounded-full border-2 border-k-red text-k-red grid place-items-center pingr"><svg class="ic"><use href="#i-shield"/></svg></span>
+<h3 class="text-white font-bold text-lg">3. TryHackMe: trilha Pre Security <span class="chip ml-2 text-xs font-mono px-2 py-0.5 rounded align-middle">Estudando agora</span></h3>
+<p class="text-stone-400 text-sm mt-1">Atualmente fazendo a trilha Pre Security no TryHackMe, que ensina cibersegurança desde a base, com redes, web e sistemas na prática.</p></li>
+<li class="relative pl-14 rv min-h-[56px]"><span class="absolute left-[15px] top-1 flex flex-col gap-2" aria-hidden="true"><i class="dot"></i><i class="dot" style="animation-delay:.25s"></i><i class="dot" style="animation-delay:.5s"></i></span><p class="text-stone-400 text-sm italic">Novas etapas serão definidas conforme a evolução da minha formação e da experiência prática.</p></li>
+</ol>
+</section>
+
+<!-- Certificados -->
+<section id="certificados" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<h2 class="ttl rv text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3"><svg class="ic text-k-red"><use href="#i-award"/></svg>Certificados e cursos</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="card p-6 rounded-xl flex items-start gap-4 rv">
+<div class="p-3 chip rounded-lg text-2xl"><svg class="ic"><use href="#i-award"/></svg></div>
+<div>
+<h3 class="text-white font-bold text-lg">Linux Unhatched</h3>
+<p class="text-k-soft text-sm font-mono mt-1">Cisco Networking Academy</p>
+<p class="text-stone-400 text-xs mt-2">Fundamentos do sistema operacional Linux, linha de comando e permissões.</p>
+<a href="https://www.credly.com/badges/8928b0c2-3f9f-4a25-a417-f820accd405c/public_url" target="_blank" rel="noopener noreferrer" class="chip inline-flex items-center gap-2 mt-4 text-xs font-semibold hover:bg-k-red hover:text-white px-3 py-2 rounded-lg transition-all" aria-label="Acessar certificado Linux Unhatched no Credly"><svg class="ic"><use href="#i-link"/></svg>Acessar certificado</a>
+</div></div>
+<div class="card p-6 rounded-xl flex items-start gap-4 rv">
+<div class="p-3 chip rounded-lg text-2xl"><svg class="ic"><use href="#i-award"/></svg></div>
+<div>
+<h3 class="text-white font-bold text-lg">Virtualização com VirtualBox</h3>
+<p class="text-k-soft text-sm font-mono mt-1">Cursa</p>
+<p class="text-stone-400 text-xs mt-2">Criação, configuração e gerenciamento de máquinas virtuais.</p>
+<a href="https://cursa.com.br/certificate/16c164f763" target="_blank" rel="noopener noreferrer" class="chip inline-flex items-center gap-2 mt-4 text-xs font-semibold hover:bg-k-red hover:text-white px-3 py-2 rounded-lg transition-all" aria-label="Acessar certificado Virtualização com VirtualBox na Cursa"><svg class="ic"><use href="#i-link"/></svg>Acessar certificado</a>
+</div></div>
+</div>
+</section>
+
+<!-- Objetivo -->
+<section id="objetivo" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<h2 class="ttl rv text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3"><svg class="ic text-k-red"><use href="#i-lock"/></svg>Objetivo profissional</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="card rounded-2xl p-6 sm:p-8 space-y-3 rv">
+<span class="chip inline-block text-xs font-mono px-2 py-1 rounded">Agora</span>
+<h3 class="text-xl font-bold text-white">Jovem Aprendiz</h3>
+<p class="text-stone-400 leading-relaxed">Uma vaga nos setores administrativo ou de tecnologia, unindo vontade de aprender, organização e facilidade com computadores para ajudar nas rotinas da empresa.</p>
+</div>
+<div class="glowborder rounded-2xl p-6 sm:p-8 space-y-3 bg-gradient-to-br from-k-deep/30 via-k-card to-k-card shadow-[0_0_40px_rgba(239,43,63,.12)] rv">
+<span class="btn inline-block text-xs font-mono px-2 py-1 rounded">Meu futuro</span>
+<h3 class="text-xl font-bold text-white">Cibersegurança: Pentester</h3>
+<p class="text-stone-300 leading-relaxed">O <strong class="text-white">Pentester</strong> procura falhas em sistemas e redes, sempre com autorização, e mostra como corrigi-las. É essa carreira que quero construir. Mais para frente, quero chegar ao <strong class="text-white">Red Team</strong>, que simula ataques reais para testar a defesa de uma empresa.</p>
+</div>
+</div>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="card rounded-2xl p-8 sm:p-12 text-center space-y-8 hover:translate-y-0">
+<div>
+<h2 class="text-3xl font-bold text-white mb-2">Vamos conversar?</h2>
+<p class="text-stone-400">Estou disponível para entrevistas e oportunidades de Jovem Aprendiz.</p>
+</div>
+<div class="flex flex-col sm:flex-row justify-center items-stretch gap-6 max-w-2xl mx-auto">
+<a href="#contato" data-c="wa" target="_blank" rel="noopener noreferrer" class="w-full sm:w-1/2 p-4 bg-black rounded-xl border border-k-line hover:border-k-red hover:bg-k-red/5 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(239,43,63,.18)] transition-all duration-300 flex items-center justify-center gap-3 group">
+<svg class="ic text-k-red group-hover:scale-110 transition-transform" style="width:1.75rem;height:1.75rem"><use href="#i-msg"/></svg>
+<div class="text-left"><div class="text-xs text-stone-400">WhatsApp</div><div class="text-sm font-bold text-white"><span data-t="wa">WhatsApp</span></div></div>
+</a>
+<a href="#contato" data-c="em" class="w-full sm:w-1/2 p-4 bg-black rounded-xl border border-k-line hover:border-k-red hover:bg-k-red/5 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(239,43,63,.18)] transition-all duration-300 flex items-center justify-center gap-3 group">
+<svg class="ic text-k-red group-hover:scale-110 transition-transform" style="width:1.75rem;height:1.75rem"><use href="#i-mail"/></svg>
+<div class="text-left"><div class="text-xs text-stone-400">E-mail</div><div class="text-sm font-bold text-white break-all"><span data-t="em">E-mail</span></div></div>
+</a>
+</div>
+<div class="pt-2">
+<a href="curriculo-miguel-alves-da-silva-com-certificados-v3.pdf" download class="btn inline-flex items-center gap-3 font-bold text-base px-8 py-4 rounded-xl"><svg class="ic" style="width:1.4rem;height:1.4rem"><use href="#i-dl"/></svg>Baixar currículo em PDF</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="border-t border-k-line bg-k-bg py-6 text-center text-xs text-stone-500">
+<p>© 2026 Miguel Alves da Silva. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+(function(){
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12}):null;
+document.querySelectorAll('.rv').forEach(function(n){if(io)io.observe(n);else n.classList.add('on')});
+var bar=document.getElementById('bar');
+function pg(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'}
+addEventListener('scroll',pg,{passive:true});pg();
+})();
+</script>
+<a href="#contato" data-c="wa" target="_blank" rel="noopener noreferrer" class="wa" aria-label="Conversar no WhatsApp">
+<span class="wa-tip">Fale comigo no WhatsApp</span>
+<span class="wa-ic"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
+</a>
+
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+var hd=document.getElementById('hd');
+function sc(){hd.classList.toggle('sc',scrollY>20)}
+addEventListener('scroll',sc,{passive:true});sc();
+var links={};
+document.querySelectorAll('.nl').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+if('IntersectionObserver' in window){
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle('act',k===e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+Object.keys(links).forEach(function(k){var el=document.getElementById(k);if(el)so.observe(el)});
+}
+if(fine){document.querySelectorAll('.card').forEach(function(c){
+c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');c.style.setProperty('--so',1)});
+c.addEventListener('pointerleave',function(){c.style.setProperty('--so',0)});
+})}
+var t=document.getElementById('typed');
+var ph=['whoami → Miguel Alves da Silva','trilha Pre Security no TryHackMe','rumo a Pentester'];
+var pi=0,ci=0,del=false;
+function tick(){var w=ph[pi];ci+=del?-1:1;t.textContent=w.slice(0,ci);var d=del?25:55;
+if(!del&&ci===w.length){del=true;d=1700}else if(del&&ci===0){del=false;pi=(pi+1)%ph.length;d=350}
+setTimeout(tick,d)}
+if(t&&!rm){t.textContent='';setTimeout(tick,900)}
+var g=document.querySelector('.glow');
+if(g&&fine&&!rm){var hero=g.closest('section');g.style.transition='transform .25s ease-out';
+hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;g.style.transform='perspective(900px) rotateY('+(x*10)+'deg) rotateX('+(-y*8)+'deg)'});
+hero.addEventListener('pointerleave',function(){g.style.transform=''});}
+var cv=document.getElementById('net');
+if(cv&&!rm){
+var cx=cv.getContext('2d'),W=0,H=0,P=[],mx=-999,my=-999,dpr=Math.min(devicePixelRatio||1,2);
+function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
+var n=Math.min(W<700?32:60,Math.round(W*H/22000));
+while(P.length<n)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35});
+P.length=n}
+size();addEventListener('resize',size);
+addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY},{passive:true});
+function draw(){
+if(!document.hidden){
+cx.clearRect(0,0,W,H);
+for(var i=0;i<P.length;i++){var a=P[i];a.x+=a.vx;a.y+=a.vy;
+if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;
+cx.fillStyle='rgba(239,43,63,.75)';cx.beginPath();cx.arc(a.x,a.y,1.5,0,6.283);cx.fill();
+for(var j=i+1;j<P.length;j++){var b=P[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+if(d<130){cx.strokeStyle='rgba(239,43,63,'+((1-d/130)*.32)+')';cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
+var mdx=a.x-mx,mdy=a.y-my,md=Math.sqrt(mdx*mdx+mdy*mdy);
+if(md<170){cx.strokeStyle='rgba(255,138,148,'+((1-md/170)*.55)+')';cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(mx,my);cx.stroke()}
+}}
+requestAnimationFrame(draw)}
+draw();
+}
+})();
+</script>
+<script>
+(function(){
+var d={wa:"aHR0cHM6Ly93YS5tZS81NTgxOTg1MTg5MDM1P3RleHQ9T2wlQzMlQTElMjBNaWd1ZWwhJTIwVmklMjBzdWElMjBwJUMzJUExZ2luYSUyMGUlMjBnb3N0YXJpYSUyMGRlJTIwY29udmVyc2FyLg==",em:"bWlndWVsY29mZmUwMUBnbWFpbC5jb20=",wt:"KzU1IDgxIDk4NTE4LTkwMzU="};
+function g(k){return atob(d[k])}
+document.querySelectorAll('[data-c="wa"]').forEach(function(a){a.href=g('wa')});
+document.querySelectorAll('[data-c="em"]').forEach(function(a){a.href='mailto:'+g('em')});
+document.querySelectorAll('[data-t="wa"]').forEach(function(e){e.textContent=g('wt')});
+document.querySelectorAll('[data-t="em"]').forEach(function(e){e.textContent=g('em')});
+})();
+</script>
+</body>
+</html>
